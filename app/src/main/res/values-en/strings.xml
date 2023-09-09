@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">MoviesApp</string>
+    <string name="email">E-mail</string>
+    <string name="pass">Password</string>
+    <string name="rep_pass">Repeat password</string>
+    <string name="registro">Check In</string>
+    <string name="informacion">Information</string>
+    <string name="sexoW">Women</string>
+    <string name="sexoM">Men</string>
+    <string name="generoPeli">Select your favorite movie genre</string>
+</resources>

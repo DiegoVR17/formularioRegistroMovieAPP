@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">PeliculasApp</string>
+    <string name="email">Correo electrónico</string>
+    <string name="pass">Contraseña</string>
+    <string name="rep_pass">Repetir Contraseña</string>
+    <string name="registro">Registrarse</string>
+    <string name="informacion">Información</string>
+    <string name="sexoW">Mujer</string>
+    <string name="sexoM">Hombre</string>
+    <string name="generoPeli">Seleccione su genero de peliculas favorito</string>
+</resources>
