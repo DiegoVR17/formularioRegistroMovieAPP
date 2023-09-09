@@ -4,18 +4,36 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".RegisterActivity">
+    tools:context=".RegisterActivity"
+    android:background="@color/dimgray">
 
     <ImageView
         android:id="@+id/logo_peli_imageView"
-        android:layout_width="174dp"
-        android:layout_height="262dp"
+        android:layout_width="143dp"
+        android:layout_height="86dp"
         android:layout_marginTop="8dp"
         android:contentDescription="@null"
         android:src="@drawable/icono_pelicula"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/name_TextInputLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/logo_peli_imageView">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/name_TextInputEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/name" />
+    </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/email_TextInputLayout"
@@ -26,7 +44,7 @@
         android:layout_marginEnd="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/logo_peli_imageView">
+        app:layout_constraintTop_toBottomOf="@+id/name_TextInputLayout">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/email_TextInputEditText"
@@ -43,7 +61,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="1dp"
         android:layout_marginEnd="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -64,7 +82,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="1dp"
         android:layout_marginEnd="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -81,11 +99,11 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <RadioGroup
-        android:id="@+id/radioGroup"
+        android:id="@+id/radioGroupSex"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="1dp"
         android:layout_marginEnd="16dp"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
@@ -110,6 +128,81 @@
             tools:ignore="VisualLintButtonSize" />
     </RadioGroup>
 
+    <!-- Primera fila de checkboxes -->
+    <RadioGroup
+        android:id="@+id/radioButtonMovies1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/radioGroupSex">
+
+        <CheckBox
+            android:id="@+id/checkbox_accion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Acción" />
+
+        <CheckBox
+            android:id="@+id/checkbox_comedia"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Comedia" />
+
+        <CheckBox
+            android:id="@+id/checkbox_drama"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Drama" />
+    </RadioGroup>
+
+    <!-- Segunda fila de checkboxes -->
+    <RadioGroup
+        android:id="@+id/radioButtonMovies2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/radioButtonMovies1">
+
+        <CheckBox
+            android:id="@+id/checkbox_ciencia_ficcion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ciencia Ficción" />
+
+        <CheckBox
+            android:id="@+id/checkbox_animacion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Animación" />
+
+        <CheckBox
+            android:id="@+id/checkbox_terror"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Terror" />
+    </RadioGroup>
+
+    <EditText
+        android:id="@+id/edit_text_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:focusable="false"
+        android:hint="@string/fechaNacimiento"
+        android:minHeight="48dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/radioButtonMovies2" />
+
+    <Spinner
+        android:id="@+id/spinner_cities"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="48dp"
+        android:entries="@array/colombian_cities"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edit_text_date" />
 
     <Button
         android:id="@+id/button_register"
@@ -117,12 +210,13 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
+        android:layout_marginTop="20dp"
         android:text="@string/registro"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="VisualLintButtonSize"
-        tools:layout_editor_absoluteY="650dp" />
+        app:layout_constraintTop_toBottomOf="@+id/spinner_cities"
+        tools:ignore="VisualLintButtonSize" />
 
     <TextView
         android:id="@+id/info_TextView"
@@ -135,12 +229,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button_register" />
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="TextView"
-        tools:layout_editor_absoluteX="17dp"
-        tools:layout_editor_absoluteY="566dp" />
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

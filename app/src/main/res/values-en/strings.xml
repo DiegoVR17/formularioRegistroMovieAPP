@@ -8,5 +8,15 @@
     <string name="informacion">Information</string>
     <string name="sexoW">Women</string>
     <string name="sexoM">Men</string>
+    <string name="name">Name</string>
     <string name="generoPeli">Select your favorite movie genre</string>
+    <string name="fechaNacimiento">birthdate</string>
+    <string name="select_city_prompt">Select a city</string>
+    <string-array name="colombian_cities">
+        <item>Bogotá</item>
+        <item>Medellín</item>
+        <item>Cali</item>
+        <item>Barranquilla</item>
+        <item>Cartagena</item>
+    </string-array>
 </resources>

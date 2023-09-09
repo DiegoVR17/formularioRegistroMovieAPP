@@ -7,5 +7,16 @@
     <string name="informacion">Información</string>
     <string name="sexoW">Mujer</string>
     <string name="sexoM">Hombre</string>
+    <string name="name">Nombre</string>
     <string name="generoPeli">Seleccione su genero de peliculas favorito</string>
+    <string name="fechaNacimiento">Fecha de nacimiento</string>
+    <string name="select_city_prompt">Selecciona una ciudad</string>
+    <string-array name="colombian_cities">
+        <item>Bogotá</item>
+        <item>Medellín</item>
+        <item>Cali</item>
+        <item>Barranquilla</item>
+        <item>Cartagena</item>
+    </string-array>
+
 </resources>
