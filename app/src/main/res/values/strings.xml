@@ -12,11 +12,10 @@
     <string name="fechaNacimiento">Fecha de nacimiento</string>
     <string name="select_city_prompt">Selecciona una ciudad</string>
     <string-array name="colombian_cities">
-        <item>Bogotá</item>
         <item>Medellín</item>
+        <item>Bogotá</item>
         <item>Cali</item>
         <item>Barranquilla</item>
         <item>Cartagena</item>
     </string-array>
-
 </resources>

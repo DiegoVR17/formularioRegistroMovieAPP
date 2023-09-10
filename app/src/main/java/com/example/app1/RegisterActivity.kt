@@ -26,16 +26,20 @@ class RegisterActivity : AppCompatActivity() {
         }
 
         registerBinding.buttonRegister.setOnClickListener {
+            val nombre = registerBinding.nameTextInputEditText.text.toString()
             val email = registerBinding.emailTextInputEditText.text.toString()
-            registerBinding.infoTextView.text = email
             val password = registerBinding.passTextInputEditText.text.toString()
             val repPassword = registerBinding.repPassTextInputEditText.text.toString()
-
+            val date = registerBinding.editTextDate.text.toString()
             var genre = "Masculino"
+
             if(registerBinding.radioButtonWomen.isChecked)genre="Femenino"
 
-            if(password == repPassword)Toast.makeText(this, "Bienvenido: $email" + "Genero: $genre",Toast.LENGTH_SHORT).show()
-            else Toast.makeText(this,"Las contraseñas no son iguales",Toast.LENGTH_SHORT).show()
+            if ((nombre.isEmpty()) || (email.isEmpty()) || (password.isEmpty()) || (repPassword.isEmpty()) || (date.isEmpty())){
+                Toast.makeText(this,"Debe completar todos los campos",Toast.LENGTH_SHORT).show()
+            }
+            else if(password != repPassword)Toast.makeText(this,"Las contraseñas no son iguales",Toast.LENGTH_SHORT).show()
+            else Toast.makeText(this, "Bienvenido: $nombre",Toast.LENGTH_SHORT).show()
         }
     }
 
