@@ -1,5 +1,6 @@
 package com.example.app1
 
+import android.annotation.SuppressLint
 import android.app.DatePickerDialog
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -15,6 +16,7 @@ class RegisterActivity : AppCompatActivity() {
     private val calendar = Calendar.getInstance()
 
     private lateinit var registerBinding: ActivityRegisterBinding
+    @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         registerBinding = ActivityRegisterBinding.inflate(layoutInflater)
@@ -38,8 +40,13 @@ class RegisterActivity : AppCompatActivity() {
             if ((nombre.isEmpty()) || (email.isEmpty()) || (password.isEmpty()) || (repPassword.isEmpty()) || (date.isEmpty())){
                 Toast.makeText(this,"Debe completar todos los campos",Toast.LENGTH_SHORT).show()
             }
-            else if(password != repPassword)Toast.makeText(this,"Las contraseñas no son iguales",Toast.LENGTH_SHORT).show()
-            else Toast.makeText(this, "Bienvenido: $nombre",Toast.LENGTH_SHORT).show()
+            else if ((password.length < 6)){
+                Toast.makeText(this,"La contraseña, debe tener minímo 6 digitos",Toast.LENGTH_SHORT).show()
+            }
+            else if((password != repPassword))Toast.makeText(this,"Las contraseñas no son iguales",Toast.LENGTH_SHORT).show()
+            else {
+                registerBinding.infoTextView.setText("Bienvenido:$nombre e-mail:$email fecha:$date sexo:$genre")
+            }
         }
     }
 
