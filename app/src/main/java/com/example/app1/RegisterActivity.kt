@@ -27,6 +27,12 @@ class RegisterActivity : AppCompatActivity() {
             showDatePickerDialog()
         }
 
+        val cities = resources.getStringArray(R.array.colombian_cities)
+        val adapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, cities)
+
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+        registerBinding.spinnerCities.adapter = adapter
+
         registerBinding.buttonRegister.setOnClickListener {
             val nombre = registerBinding.nameTextInputEditText.text.toString()
             val email = registerBinding.emailTextInputEditText.text.toString()
@@ -71,12 +77,6 @@ class RegisterActivity : AppCompatActivity() {
         }
 
         datePickerDialog.show()
-
-        val cities = resources.getStringArray(R.array.colombian_cities)
-        val adapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, cities)
-
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-        registerBinding.spinnerCities.adapter = adapter
     }
 }
 
