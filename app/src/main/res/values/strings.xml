@@ -11,6 +11,7 @@
     <string name="generoPeli">Seleccione su genero de peliculas favorito</string>
     <string name="fechaNacimiento">Fecha de nacimiento</string>
     <string name="select_city_prompt">Selecciona una ciudad</string>
+    <string name="login">Login</string>
     <string-array name="colombian_cities">
         <item>Medellín</item>
         <item>Bogotá</item>
